@@ -100,6 +100,10 @@ main#app-content header h2{
   font-size: 3rem;
   color: #fff;
 }
+.inline-row{
+  position: relative;
+  overflow: hidden;
+}
 .containers .inline-row a{
   font-size: 3rem;
   opacity: 1;
@@ -124,16 +128,29 @@ main#app-content header h2{
 .containers a.view-btn:before,
 .containers a.view-btn:after{
   font-family: 'FontAwesome';
+  position: absolute;
+  -webkit-transition: .5s all ease;
+  -moz-transition: .5s all ease;
+  -ms-transition: .5s all ease;
+  -o-transition: .5s all ease;
+  transition: .5s all ease;
 }
 .containers a.view-btn:before{
+  left: -5rem;
   margin-right: 1rem;
   content: '\f0a4';
 }
 .containers a.view-btn:after{
+  right: -5rem;
   margin-left: 1rem;
   content: '\f0a5';
 }
-
+.containers .inline-row a:hover:before{
+  left: 33rem;
+}
+.containers .inline-row a:hover:after{
+  right: 33rem;
+}
 .containers .block a.view-btn{
   background-color: rgb(85, 30, 97);
   padding: 1rem 3rem;
