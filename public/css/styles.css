@@ -5,7 +5,9 @@
     font-weight: normal;
     font-style: normal;
 }
-
+*{
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
 nav.navbar{
   position: fixed;
   z-index: 2;
@@ -16,17 +18,21 @@ nav.navbar{
 nav.navbar a{
   color: #fff;
 }
-main#app-content header h1,
+main#app-content header,
 .containers .inline-row h2,
 .containers .inline-row a,
 nav .navbar-brand,
+nav .navbar-brand span,
 .block a{
   font-family: 'kilogram';
 }
+nav.navbar .navbar-collapse{
+  justify-content: flex-end;
+}
 nav ul.navbar-nav a{
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   font-family: cursive;
-  font-size: 0.7rem;
+  font-size: 1rem;
 }
 main#app-content{
   position: relative;
@@ -41,14 +47,26 @@ main#app-content{
   justify-content: center;
 }
 main#app-content header {
-  padding: 1rem;
+  padding: 1rem 6rem;
+  text-shadow: 0 0 1px #0013E3, 0 0 9px #ff0095;
+  color: #fff;
+  text-align: center;
 }
 main#app-content header h1{
-  color: #fff;
-  text-shadow: 0 0 1px #0013E3, 0 0 9px #ff0095;
   transform: rotate(-8deg);
 }
 
+main#app-content header h2{
+  margin-top: 6rem;
+  font-size: 3rem;
+}
+.bg-image{
+  margin-top: -3.5rem;
+  height: 100vh;
+  background: url('../images/background.jpg') no-repeat fixed;
+  background-size: cover;
+  background-position: 50%;
+}
 .containers{
   position: relative;
   bottom: 3.5rem;
@@ -103,13 +121,24 @@ main#app-content header h1{
   width:100%;
   height: 100vh;
 }
-.containers .block a.view-btn:nth-child(n){
-  background-color: #551e61;
-  padding: 1rem 3rem;
+.containers a.view-btn:before,
+.containers a.view-btn:after{
+  font-family: 'FontAwesome';
 }
+.containers a.view-btn:before{
+  margin-right: 1rem;
+  content: '\f0a4';
+}
+.containers a.view-btn:after{
+  margin-left: 1rem;
+  content: '\f0a5';
+}
+
 .containers .block a.view-btn{
+  background-color: rgb(85, 30, 97);
+  padding: 1rem 3rem;
+  bottom: -50rem;
   position: absolute;
-  bottom: 0;
   left: 0;
   right: 0;
   top: 0;
@@ -128,7 +157,8 @@ main#app-content header h1{
   transition: .3s all ease;
 }
 .containers .block:hover a.view-btn{
-  opacity: 1;
+  opacity: .9;
+  bottom: 0;
 }
 
 a.view-btn{
@@ -151,7 +181,7 @@ footer#mainFooter{
   z-index: 0;
   width: 100%;
   padding: 1rem;
-  background: #ff0095;
+  background: #222;
   color: #fff;
   display: flex;
   justify-content: center;
